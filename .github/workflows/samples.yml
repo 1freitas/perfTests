@@ -10,8 +10,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Run k6 local test
+      - name: Install dependencies
+        run: |
+          yarn --frozen-lockfile
+      - name: Transpile and bundle test script
+        run: |
+          yarn webpack
+      - name: Run local k6 test
         uses: grafana/k6-action@v0.2.0
         with:
-          run: la -la 
           filename: dist/get-200-status-test.js
