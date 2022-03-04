@@ -6,7 +6,7 @@ const binFile = open('test.png', 'b');
 const url = `https://httpbin.org/post`;
 
 export let options:Options = {
-  vus: 5,
+  vus: 15,
   duration: '10s'
 };
 
