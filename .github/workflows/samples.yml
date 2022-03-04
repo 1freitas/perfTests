@@ -1,4 +1,4 @@
-name: CI Execução de exemplos de teste de performance 
+name: CI Execução de exemplos de teste de performance
 on:
   push:
     branches: [ sample ]
@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-          uses: actions/checkout@v2
+        uses: actions/checkout@v1
+
       - name: Run local k6 test
           uses: k6io/action@v0.1
           with:
