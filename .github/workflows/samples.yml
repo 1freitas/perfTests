@@ -13,4 +13,4 @@ jobs:
       - name: Run local k6 test
         uses: k6io/action@v0.1
         with:
-          filename: ./src/get-200-status-test.js
+          path: ./src
