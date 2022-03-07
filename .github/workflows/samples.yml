@@ -3,7 +3,7 @@ on:
 #  push:
 #    branches: [ sample ]
   pull_request:
-    branches: [ sample ]
+    branches: [ main ]
 jobs:
   perfSamples:
     runs-on: ubuntu-latest
