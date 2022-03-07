@@ -14,5 +14,7 @@ jobs:
         run: yarn --frozen-lockfile
       - name: Transpile and bundle test script
         run: yarn webpack
-      - name: Local k6 test
+      - name: Local k6 specific test
         run: k6 run dist/get-200-status-test.js
+      - name: Local k6 all tests
+        run: k6 run dist/*.js
