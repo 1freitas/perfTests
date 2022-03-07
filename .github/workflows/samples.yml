@@ -1,7 +1,7 @@
 name: CI Execução de exemplos de teste de performance
 on:
-  push:
-    branches: [ sample ]
+#  push:
+#    branches: [ sample ]
   pull_request:
     branches: [ sample ]
 jobs:
