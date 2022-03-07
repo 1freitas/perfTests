@@ -1,0 +1,15 @@
+on: [push]
+jobs:
+  perfSamples:
+    name: k6 local test run - docker example
+    runs-on: ubuntu-latest
+    container: docker://loadimpact/k6:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Transpile and bundle test script
+        run: yarn webpack
+      - name: Local k6 test
+        run: k6 run dist/get-200-status-test.js
