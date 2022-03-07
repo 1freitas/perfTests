@@ -1,7 +1,7 @@
 name: CI Execução de exemplos de teste de performance
 on:
-#  push:
-#    branches: [ sample ]
+  push:
+    branches: [ sample ]
   pull_request:
     branches: [ main ]
 jobs:
@@ -15,6 +15,4 @@ jobs:
       - name: Transpile and bundle test script
         run: yarn webpack
       - name: Run local k6 test
-        uses: grafana/k6-action@v0.2.0
-        with:
-          path: ./dist
+        run: k6 run dist/get-200-status-test.js
