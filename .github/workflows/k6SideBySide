@@ -1,4 +1,7 @@
-on: [push]
+name: CI Execução de exemplos de teste de performance, usando Docker
+on:
+  push:
+    branches: [ sample ]
 jobs:
   perfSamples:
     name: k6 local test run - docker example
