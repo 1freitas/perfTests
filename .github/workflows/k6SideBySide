@@ -1,7 +1,7 @@
 name: K6 using Docker
 on:
   push:
-    branches: [ sample ]
+    branches: [sample]
 jobs:
   perfSamples:
     name: k6 local test run - docker example
