@@ -15,6 +15,6 @@ jobs:
       - name: Transpile and bundle test script
         run: yarn webpack
       - name: Install K6
-        run: yarn intall
+        run: yarn install
       - name: Run local k6 test
         run: ./k6 run dist/get-200-status-test.js
