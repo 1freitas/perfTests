@@ -2,6 +2,9 @@ export { get200StatusTest } from './get-200-status-test.ts';
 export { get400StatusTest } from './post-400-status-test.ts';
 export { postFileTest } from './post-file-test.ts';
 
+export default () => {
+  sleep(1);
+}
 export const options = {
   scenarios: {
     get200: {
@@ -23,4 +26,5 @@ export const options = {
       duration: '1m'
     }
   }
+
 };
