@@ -1,3 +1,4 @@
+import { sleep} from 'k6';
 export { get200StatusTest } from './get-200-status-test.ts';
 export { get400StatusTest } from './post-400-status-test.ts';
 export { postFileTest } from './post-file-test.ts';
@@ -26,5 +27,4 @@ export const options = {
       duration: '1m'
     }
   }
-
 };
