@@ -10,7 +10,7 @@ export let options:Options = {
   duration: '10s'
 };
 
-export default (): void => {
+export function postFileTest (): void {
   const postData: StructuredRequestBody = { file: http.file(binFile) };
   const response = http.post(url, postData);
 
