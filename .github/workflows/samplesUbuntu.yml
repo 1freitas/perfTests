@@ -1,0 +1,23 @@
+name: CI Execução de exemplos de teste de performance
+on:
+  push:
+    branches: [ sample ]
+  pull_request:
+    branches: [ sample ]
+jobs:
+  perfSamples:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install packages
+        run: |
+          npm install
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Transpile and bundle test script
+        run: yarn webpack
+      - name: Run local k6 test
+        uses: grafana/k6-action@v0.2.0
+        with:
+          filename: dist/main-test.js
