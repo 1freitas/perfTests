@@ -1,11 +1,12 @@
 import { sleep} from 'k6';
-export { get200StatusTest } from './get-200-status-test.ts';
-export { get400StatusTest } from './post-400-status-test.ts';
-export { postFileTest } from './post-file-test.ts';
+export { get200StatusTest } from './get200StatusTest.ts';
+export { get400StatusTest } from './postFileTest.ts';
+export { postFileTest } from './postFileTest.ts';
 
 export default () => {
   sleep(1);
 }
+
 export const options = {
   scenarios: {
     get200: {
