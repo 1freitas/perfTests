@@ -41,7 +41,6 @@ To run a test written in TypeScript, we first have to transpile the TypeScript c
 ```bash
 $ npm run start
 ```
-
 or using Yarn
 
 ```bash
@@ -55,15 +54,18 @@ This command creates the final test files to the `./dist` folder.
 Once that is done, we can run our script the same way we usually do, for instance:
 
 ```bash
-$ k6 run dist/get-200-status-test.js
+$ k6 run dist/script.js
 ```
+## Samples
+In branch sample have exemplos od k6 script ( based on [template](https://github.com/grafana/k6/issues/1342)), but was modifications for use only one script to centric the suite of performance tests. 
+In k6 project was [open issue](https://github.com/grafana/k6/issues/1342) about these topic "Why use k6 to run multiple scripts together". 
 
 ## Writing own tests
 
 House rules for writing tests:
 
 -   The test code is located in `src` folder
--   The entry points for the tests need to have "_test_" word in the name to distinguish them from auxiliary files. You can change the entry [here](./webpack.config.js#L8).
+-   The entry points for the tests need to have extention ".ts". You can change the entry [here](./webpack.config.js#L10).
 -   If static files are required then add them to `./assets` folder. Its content gets copied to the destination folder (`dist`) along with compiled scripts.
 
 ### Transpiling and Bundling
