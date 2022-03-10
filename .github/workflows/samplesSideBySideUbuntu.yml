@@ -1,0 +1,21 @@
+name: Sample K6 Side by Side
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  perfSamples:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Transpile and bundle test script
+        run: yarn webpack
+      - name: Install k6 side by side
+        run: |
+          curl https://github.com/loadimpact/k6/releases/download/v0.26.2/k6-v0.26.2-linux64.tar.gz -L | tar xvz --strip-components 1
+      - name: Run local k6 test
+        run: ./k6 run dist/get200StatusTest.js

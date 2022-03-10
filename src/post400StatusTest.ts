@@ -10,7 +10,7 @@ export let options:Options = {
   duration: '10s'
 };
 
-export default () => {
+export function get400StatusTest (){
   const res = http.post('https://httpbin.org/status/400');
   check(res, {
     'status is 400': () => res.status === 400,

@@ -6,11 +6,11 @@ const binFile = open('test.png', 'b');
 const url = `https://httpbin.org/post`;
 
 export let options:Options = {
-  vus: 5,
+  vus: 15,
   duration: '10s'
 };
 
-export default (): void => {
+export function postFileTest (): void {
   const postData: StructuredRequestBody = { file: http.file(binFile) };
   const response = http.post(url, postData);
 

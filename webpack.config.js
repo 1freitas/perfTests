@@ -1,18 +1,20 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const GlobEntries = require('webpack-glob-entries');
+const path = require( 'path' );
+const {
+  CleanWebpackPlugin
+} = require( 'clean-webpack-plugin' );
+const CopyPlugin = require( 'copy-webpack-plugin' );
+const GlobEntries = require( 'webpack-glob-entries' );
 
 module.exports = {
   mode: 'production',
-  entry: GlobEntries('./src/*test*.ts'), // Generates multiple entry for each test
+  entry: GlobEntries( './src/*.ts' ), // Generates multiple entry for each test
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join( __dirname, 'dist' ),
     libraryTarget: 'commonjs',
     filename: '[name].js',
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: [ '.ts', '.js' ],
   },
   module: {
     rules: [
@@ -34,12 +36,12 @@ module.exports = {
     new CleanWebpackPlugin(),
     // Copy assets to the destination folder
     // see `src/post-file-test.ts` for an test example using an asset
-    new CopyPlugin({
-      patterns: [{ 
-        from: path.resolve(__dirname, 'assets'), 
-        noErrorOnMissing: true 
-      }],
-    }),
+    new CopyPlugin( {
+      patterns: [ {
+        from: path.resolve( __dirname, 'assets' ),
+        noErrorOnMissing: true
+      } ],
+    } ),
   ],
   optimization: {
     // Don't minimize, as it's not used in the browser
