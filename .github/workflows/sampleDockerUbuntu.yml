@@ -1,7 +1,11 @@
 name: K6 using Docker
 on:
   push:
+<<<<<<< HEAD
     branches: [main]
+=======
+    branches: [sample]
+>>>>>>> 92b93847b1e13fcf97acb641fdb23fb89e65db1d
 jobs:
   perfSamples:
     name: k6 local test run - docker example

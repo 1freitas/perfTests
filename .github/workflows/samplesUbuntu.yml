@@ -1,9 +1,9 @@
 name: Sample k6-action
 on:
   push:
-    branches: [ main ]
+    branches: [ sample ]
   pull_request:
-    branches: [ main ]
+    branches: [ sample ]
 jobs:
   perfSamples:
     runs-on: ubuntu-latest
