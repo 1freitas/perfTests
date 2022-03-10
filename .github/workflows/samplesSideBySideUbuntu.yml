@@ -1,15 +1,9 @@
 name: Sample K6 Side by Side
 on:
   push:
-<<<<<<< HEAD
     branches: [ main ]
   pull_request:
     branches: [ main ]
-=======
-    branches: [ sample ]
-  pull_request:
-    branches: [ sample ]
->>>>>>> 92b93847b1e13fcf97acb641fdb23fb89e65db1d
 jobs:
   perfSamples:
     runs-on: ubuntu-latest
