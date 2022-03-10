@@ -4,9 +4,11 @@
 
 # Exemple to use K6 with TypeScript
 
-[![CI Execução de exemplos de teste de performance](https://github.com/1freitas/perfTests/actions/workflows/samples.yml/badge.svg?event=workflow_run)](https://github.com/1freitas/perfTests/actions/workflows/samples.yml)
-
+[![Sample k6-action](https://github.com/1freitas/perfTests/actions/workflows/samplesUbuntu.yml/badge.svg?branch=main)](https://github.com/1freitas/perfTests/actions/workflows/samplesUbuntu.yml)
+[![Sample K6 Side by Side](https://github.com/1freitas/perfTests/actions/workflows/samplesSideBySideUbuntu.yml/badge.svg?branch=main)](https://github.com/1freitas/perfTests/actions/workflows/samplesSideBySideUbuntu.yml)
+  
 </div>
+
 This repository provides the initial structure of the k6 project with using TypeScript and is based in the template of GrafanaLabs.
 For more details about this template (used typescript in K6 scripts) access [the page of template](https://github.com/grafana/k6-template-typescript).
 
