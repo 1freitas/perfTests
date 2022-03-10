@@ -1,4 +1,4 @@
-name: CI Execução de exemplos de teste de performance 
+name: Sample k6-action
 on:
   push:
     branches: [ sample ]
@@ -10,7 +10,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Transpile and bundle test script
+        run: yarn webpack
       - name: Run local k6 test
-        uses: k6io/action@v0.1
+        uses: grafana/k6-action@v0.2.0
         with:
-          path: ./src
+          filename: dist/main.js
