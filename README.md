@@ -30,6 +30,8 @@ or using yarn
 
 ```bash
 $ yarn install
+# installed by npm
+$ .\node_modules\yarn\bin\yarn webpack
 ```
 
 ## Running the test
