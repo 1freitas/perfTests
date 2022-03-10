@@ -7,9 +7,9 @@ export let options:Options = {
   duration: '10s'
 };
 
-export default {
+export default() {
   sleep(1);
-}
+};
 
 export function get200StatusTest() {
   const res = http.get('https://test-api.k6.io');
