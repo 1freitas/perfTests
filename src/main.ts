@@ -1,6 +1,6 @@
 import { sleep} from 'k6';
 export { get200StatusTest } from './get200StatusTest.ts';
-export { get400StatusTest } from './postFileTest.ts';
+export { get400StatusTest } from './post400StatusTest.ts';
 export { postFileTest } from './postFileTest.ts';
 
 export default () => {
