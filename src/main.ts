@@ -1,4 +1,5 @@
 import { sleep} from 'k6';
+import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 export { get200StatusTest } from './get200StatusTest.ts';
 export { get400StatusTest } from './post400StatusTest.ts';
 export { postFileTest } from './postFileTest.ts';
@@ -29,3 +30,9 @@ export const options = {
     }
   }
 };
+
+export function handleSummary(data) {
+  return {
+    "summary.html": htmlReport(data),
+  };
+}
